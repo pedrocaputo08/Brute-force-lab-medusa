@@ -1,0 +1,4 @@
+e-123456
+password
+qwert
+msfadmin
