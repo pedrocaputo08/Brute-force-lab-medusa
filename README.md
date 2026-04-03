@@ -190,12 +190,8 @@ medusa -h 192.168.56.101 -U user.txt -P pass.txt -M http \
 ```
 brute-force-lab-medusa/
 ├── README.md
-├── wordlists/
 │   ├── user.txt
 │   ├── pass.txt
-│   ├── smb_users.txt
-│   └── senhas_spray.txt
-└── images/
     ├── Ifconfig_-_metasploit.png
     ├── ping-kalilinux.png
     ├── Medusa-FTP.png
