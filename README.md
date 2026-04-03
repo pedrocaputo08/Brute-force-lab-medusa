@@ -21,6 +21,7 @@ Projeto prático do curso de Cibersegurança da DIO, simulando ataques de força
 
 Duas VMs configuradas no VirtualBox com rede Host-Only (isolada), garantindo que os testes não saiam do ambiente controlado.
 
+
 - **Kali Linux** → máquina atacante
 - **Metasploitable 2** → máquina alvo
 
@@ -31,7 +32,7 @@ Comando executado no Metasploitable 2:
 ifconfig
 ```
 
-![ifconfig Metasploitable](images/Ifconfig_-_metasploit.png)
+<img width="838" height="532" alt="Ifconfig - metasploit" src="https://github.com/user-attachments/assets/4fac3767-ef8e-4b2a-9f24-50e90a933980" />
 
 > IP identificado: **192.168.56.101**
 
@@ -44,7 +45,8 @@ Comando executado no Kali Linux:
 ping -c 4 192.168.56.101
 ```
 
-![Ping Kali Linux](images/ping-kalilinux.png)
+<img width="1279" height="884" alt="ping-kalilinux" src="https://github.com/user-attachments/assets/03dd7d88-5991-47ca-94ad-b5be92d7e966" />
+
 
 > 4 pacotes enviados, 4 recebidos, 0% de perda — ambiente funcionando perfeitamente. ✅
 
@@ -66,7 +68,8 @@ medusa -h 192.168.56.101 -U user.txt -P pass.txt -M ftp -t 6
 
 ### Resultado
 
-![Medusa FTP](images/Medusa-FTP.png)
+<img width="1277" height="879" alt="Medusa-FTP" src="https://github.com/user-attachments/assets/c66ecaee-6a2c-42e8-9b86-b8e6ca88ba6b" />
+
 
 O Medusa encontrou a credencial válida:
 
@@ -98,7 +101,8 @@ Enumerar usuários do serviço SMB e realizar password spraying para descobrir c
 nmap -p 445 --script smb-enum-users 192.168.56.101
 ```
 
-![Nmap SMB](images/Nmap-SMB.png)
+<img width="1274" height="880" alt="Nmap-SMB" src="https://github.com/user-attachments/assets/94ac3e78-c869-40d8-9070-485689aee51c" />
+
 
 > O Nmap listou diversos usuários do sistema, como: `backup`, `bin`, `daemon`, `ftp`, `msfadmin`, entre outros.
 
@@ -107,7 +111,8 @@ nmap -p 445 --script smb-enum-users 192.168.56.101
 medusa -h 192.168.56.101 -U smb_users.txt -P senhas_spray.txt -M smbnt -t 2 -T 50
 ```
 
-![Spray SMB](images/spray-SMB.png)
+<img width="1279" height="877" alt="spray-SMB" src="https://github.com/user-attachments/assets/bff6180a-1e3a-4e99-8e67-e7b91c2113e7" />
+
 
 ### Resultado
 
@@ -135,7 +140,8 @@ Automatizar tentativas de login no formulário web do DVWA usando o Medusa.
 
 ### Tela de login do DVWA
 
-![Formulário DVWA](images/Formulario-DVWA.png)
+<img width="1276" height="881" alt="Formulario-DVWA" src="https://github.com/user-attachments/assets/e924c912-01cd-42cc-a32d-1958b1b9ddc6" />
+
 
 ### Wordlists utilizadas
 - `user.txt` → lista de usuários
@@ -151,7 +157,8 @@ medusa -h 192.168.56.101 -U user.txt -P pass.txt -M http \
 
 ### Resultado
 
-![Ataque DVWA](images/Ataque-NVWA.png)
+<img width="1279" height="881" alt="Ataque-NVWA" src="https://github.com/user-attachments/assets/27a69a55-1f12-4a0b-b802-0279fa104402" />
+
 
 | Usuário | Senha | Status |
 |---|---|---|
