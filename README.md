@@ -186,12 +186,13 @@ medusa -h 192.168.56.101 -U user.txt -P pass.txt -M http \
 
 ---
 
-##  Estrutura do Repositório
+## 📁 Estrutura do Repositório
 ```
 brute-force-lab-medusa/
 ├── README.md
-│   ├── user.txt
-│   ├── pass.txt
+├── user.txt
+├── pass.txt
+└── images/
     ├── Ifconfig_-_metasploit.png
     ├── ping-kalilinux.png
     ├── Medusa-FTP.png
